@@ -6,7 +6,7 @@ class Node {
     Node left;
     Node right;
     int height;
-    
+
     Node(int k){
         this.key = k;
     }
@@ -25,12 +25,12 @@ public class Main{
         root.right.right.right = new Node(80);
         levelOrder(root);
     }
-    
+
     public static void levelOrder(Node root){
         if(root == null){
             return;
         }
-        
+
         Queue<Node> q = new LinkedList<Node>();
         q.add(root);
         q.add(null);
@@ -38,17 +38,18 @@ public class Main{
             Node curr = q.poll();
             if(curr == null){
                 q.add(null);
+                System.out.println();
             } else {
                 System.out.print(curr.key + " ");
                 if(curr.left!=null){
                     q.add(curr.left);
-                } 
+                }
                 if(curr.right != null){
                     q.add(curr.right);
                 }
             }
-            
+
         }
     }
-    
+
 }
